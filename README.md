@@ -6,10 +6,10 @@
 ![Analysis](https://img.shields.io/badge/Analysis-Retail%20%7C%20Customer%20%7C%20Profitability-6D4C41)
 ![Status](https://img.shields.io/badge/Status-Complete-5D7B4F)
 
+[Click to view the interactive dashboard](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FAdeeTheAnalyst%2Fkb-cafe-sales-dashboard%2Frefs%2Fheads%2Fmain%2FKB_Cafe_Dashboard.xlsx&wdOrigin=BROWSELINK)
+
 [![KB Cafe dashboard](images/01_KB_Cafe_Final_Dashboard.png)](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FAdeeTheAnalyst%2Fkb-cafe-sales-dashboard%2Frefs%2Fheads%2Fmain%2FKB_Cafe_Dashboard.xlsx&wdOrigin=BROWSELINK)
-*The finished one-page interactive dashboard: 4 slicers, 7 KPI tiles, 8 charts, formula-driven insights and recommended actions.*
-
-
+[The finished one-page interactive dashboard: 4 slicers, 7 KPI tiles, 8 charts, formula-driven insights and recommended actions.](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FAdeeTheAnalyst%2Fkb-cafe-sales-dashboard%2Frefs%2Fheads%2Fmain%2FKB_Cafe_Dashboard.xlsx&wdOrigin=BROWSELINK)
 
 ---
 
@@ -68,11 +68,6 @@ I took the role of a **sales and business analyst** and set myself the brief an 
 
 A dashboard that only describes sales would not meet that brief. The goal was to move from **describing what happened** to **supporting decisions**.
 
-### How the project evolved
-
-1. **Version 1** answered the basic question: how much did we sell, where and of what? It used PivotTables, four slicers, five charts and six KPI tiles.
-2. **A critical review** showed three weaknesses: the trend line was not in date order, profit was invisible next to sales, and nothing said anything about customers.
-3. **Version 2** fixed the chart, added 13 engineered columns, 12 PivotTables and 8 charts focused on profit, growth and customer health, and ended with written insights and actions.
 
 ---
 
@@ -111,8 +106,6 @@ Three related tables: `orders` (1,000 order lines), `customers` (1,000 registere
 - Not every customer has an email: 726 of 913 buyers (79.5%) can be reached.
 - Profit is only available as a **per-unit figure** in the products table, so total profit is quantity times unit profit.
 
-The full data model, the lookups I built and the data-quality notes are in [docs/01_data_and_preparation.md](docs/01_data_and_preparation.md).
-
 ---
 
 ## 5. Skills and Tools Demonstrated
@@ -139,34 +132,20 @@ The full data model, the lookups I built and the data-quality notes are in [docs
 | Step | What I did | Detail |
 |---|---|---|
 | 1. Understand | Wrote the business questions before touching a formula | [Section 3](#3-business-questions) |
-| 2. Prepare | Filled the orders table with lookups to customers and products; made it an Excel Table | [docs/01](docs/01_data_and_preparation.md) |
-| 3. Engineer | Added 13 helper columns and one named formula (`DataEnd`) | [docs/02](docs/02_feature_engineering.md) |
-| 4. Analyse | Built 12 PivotTables, one per question or chart | [docs/03](docs/03_pivot_analysis.md) |
-| 5. Visualise | Built 8 charts (7 PivotCharts, 1 formula-driven) | [docs/04](docs/04_dashboard_design.md) |
-| 6. Interact | Added 4 slicers, each connected deliberately | [docs/04](docs/04_dashboard_design.md) |
-| 7. Design | Laid out a one-page, 21-column dashboard | [docs/04](docs/04_dashboard_design.md) |
-| 8. Narrate | Wrote formula-driven insights and actions | [docs/04](docs/04_dashboard_design.md) |
-| 9. Validate | Checked helper columns, KPIs and slicer states against known totals | [docs/05](docs/05_validation_and_decisions.md) |
-
-A click-by-click build guide is in [docs/KB_Cafe_Dashboard_v2_Build_Guide.docx](docs/KB_Cafe_Dashboard_v2_Build_Guide.docx).
+| 2. Prepare | Filled the orders table with lookups to customers and products; made it an Excel Table |
+| 3. Engineer | Added 13 helper columns and one named formula (`DataEnd`) |
+| 4. Analyse | Built 12 PivotTables, one per question or chart | 
+| 5. Visualise | Built 8 charts (7 PivotCharts, 1 formula-driven) |
+| 6. Interact | Added 4 slicers, each connected deliberately |
+| 7. Design | Laid out a one-page, 21-column dashboard |
+| 8. Narrate | Wrote formula-driven insights and actions |
+| 9. Validate | Checked helper columns, KPIs and slicer states against known totals |
 
 ---
 
-## 7. Key Analytical Decisions
+## 7. Findings
 
-The choices that most changed the results (full table in [docs/05](docs/05_validation_and_decisions.md)):
-
-- **Count distinct orders with a flag, not rows.** Rows say 1,000 orders; the truth is 957.
-- **Classify repeat customers by distinct orders, not rows.** Counting rows would label **52** customers as repeat; the correct number is **25**.
-- **Compare the same period each year** (1 Jan to 19 Aug), because 2022 is incomplete.
-- **Measure recency to the last date in the data, not `TODAY()`**, otherwise every customer would look lapsed.
-- **Keep the Year slicer off the customer charts**, because the customer flag sits on each customer's first order.
-
----
-
-## 8. Findings
-
-### 8.1 Growth: a decline driven by fewer orders
+### 7.1 Growth: a decline driven by fewer orders
 
 | Year | Same-period sales (1 Jan to 19 Aug) | Orders | Avg order value | Growth |
 |---|---|---|---|---|
@@ -179,7 +158,7 @@ Revenue is orders times average order value. In 2022 orders fell 9.7% while AOV 
 
 *Seasonality caveat:* September to December is the peak (34%, 34% and 42% of sales in 2019 to 2021), and 2022's peak is still to come. This is an **early warning, not a verdict**.
 
-### 8.2 Profitability: sales rank is not profit rank
+### 7.2 Profitability: sales rank is not profit rank
 
 | Coffee | Share of sales | Share of profit | Margin | Profit per kg |
 |---|---|---|---|---|
@@ -190,7 +169,7 @@ Revenue is orders times average order value. In 2022 orders fell 9.7% while AOV 
 
 Each dollar of Robusta earns about half what a dollar of Liberica earns. Roast level makes almost no difference (margins of about 10% across Light, Medium and Dark), which is why I removed the Coffee x Roast chart from the dashboard.
 
-### 8.3 Customers: the business has a retention problem
+### 7.3 Customers: the business has a retention problem
 
 - **97.3% of customers (888 of 913) bought once.**
 - The 25 repeat customers are 2.7% of customers but **7.9% of revenue**, and spend about **$143 versus $47** per customer.
@@ -198,7 +177,7 @@ Each dollar of Robusta earns about half what a dollar of Liberica earns. Roast l
 
 *Caution:* counts of 13 and 12 are small, so I phrase it as "no evidence it works", not "it does not work".
 
-### 8.4 Customer base health
+### 7.4 Customer base health
 
 | Segment | Customers | With email |
 |---|---|---|
@@ -209,21 +188,16 @@ Each dollar of Robusta earns about half what a dollar of Liberica earns. Roast l
 
 Seventy percent of customers have not returned in over a year, and 79.5% of buyers can be contacted by email at almost no cost. A further 87 registered customers never bought at all (70 have an email address).
 
-### 8.5 Baskets and pack sizes
+### 7.5 Baskets and pack sizes
 
 - Only **31 of 957 orders (3.2%)** contain more than one product, but they average **$93.69 versus $45.60**.
 - The 2.5 kg bag is **53%** of sales. The 0.2 kg bag is about 25% of units but only about 7% of revenue, so it may cost more to handle than it earns (cost data would confirm).
 
-### 8.6 Markets
+### 7.6 Markets
 
 - The **United States is 79%** of sales overall and **81% in 2022**.
 - The **United Kingdom's share fell from 8% (2019) to 2% (2022)**; same-period UK sales dropped from $289 to $130 between 2021 and 2022.
 - Ireland grew from 15% to 17% of sales.
-
-### 8.7 What did not matter (and why I left it out)
-
-- **Top 5 customers:** together only 3.3% of sales, so no single customer matters. I removed the chart.
-- **Coffee x Roast:** all roasts earn about the same margin, so it rarely changes a decision.
 
 ---
 
@@ -257,7 +231,7 @@ Seventy percent of customers have not returned in over a year, and 79.5% of buye
 
 ## 11. How to Use the Workbook
 
-1. Open `KB_Cafe_Dashboard_v2.xlsx` in **Microsoft Excel 2019 or Microsoft 365**. Click **Enable Editing** if it opens in Protected View.
+1. Open `KB_Cafe_Dashboard.xlsx` in **Microsoft Excel 2019 or Microsoft 365**. Click **Enable Editing** if it opens in Protected View.
 2. Go to the **Dashboard** sheet.
 3. Click the **slicers** (Year, Country, Loyalty Card, Coffee Type) to filter. Use **Ctrl+Click** to select several items, or the funnel icon to clear.
 4. Read the dashboard top to bottom: KPIs, trend, products, customers, insights, actions.
@@ -277,26 +251,16 @@ Seventy percent of customers have not returned in over a year, and 79.5% of buye
 
 ```
 kb-cafe-sales-dashboard/
+|--images/
+|   -- 01_KB_Cafe_Final_Dashboard.png                
+|   -- 02_Charts.png
+|   -- 03_Charts.png
+|   -- pivots/
+|     |
+|-- KB_Cafe_Dashboard.xlsx
+|-- KB_Cafe_Raw_Dataset_xlsx     
 |-- README.md
-|-- KB_Cafe_Dashboard_v2.xlsx
-|-- data/
-|   |-- README.md                              (source, licence and privacy note)
-|   `-- KB_Cafe_Retail_Sales_Data_Raw.xlsx     (add only if you have the right to share it)
-|-- images/
-|   |-- 01_dashboard_final.png                 (screenshot of the finished dashboard)
-|   |-- 02_dashboard_blueprint.png
-|   |-- 03_trend_sort_fix.png
-|   |-- 04_target_design_mockup.png
-|   `-- pivots/
-|       `-- pt01.png ... pt12.png
-`-- docs/
-    |-- README.md
-    |-- 01_data_and_preparation.md
-    |-- 02_feature_engineering.md
-    |-- 03_pivot_analysis.md
-    |-- 04_dashboard_design.md
-    |-- 05_validation_and_decisions.md
-    `-- KB_Cafe_Dashboard_v2_Build_Guide.docx
+
 ```
 
 ---
@@ -314,11 +278,10 @@ kb-cafe-sales-dashboard/
 
 ## 14. About Me
 
-**[Your Name]**: Data Analyst
+### SHERIFAT ADESHINA: Data Analyst
 
 I turn raw business data into decisions: cleaning and modelling data, building dashboards people actually use, and explaining the findings in plain language.
 
-- LinkedIn: [your-link]
-- GitHub: [your-link]
-- Portfolio: [your-link]
-- Email: [your-email]
+- LinkedIn: [https://www.linkedin.com/in/adeshina-sherifat](https://www.linkedin.com/in/adeshina-sherifat)
+- Portfolio: [https://medium.com/@eyinadeadeshina36/list/from-data-to-decision-making-561ab26ca151](https://medium.com/@eyinadeadeshina36/list/from-data-to-decision-making-561ab26ca151)
+- Email: [eyinadeadeshina36@gmail.com](mailto:eyinadeadeshina36@gmail.com)
