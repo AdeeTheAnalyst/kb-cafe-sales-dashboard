@@ -9,9 +9,7 @@ An interactive Excel dashboard that turns 1,000 raw coffee-order lines into a si
 
 ![KB Cafe dashboard overview](images/01_KB_Cafe_Final_Dashboard.png)
 
-[Click to view the interactive dashboard](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FAdeeTheAnalyst%2Fkb-cafe-sales-dashboard%2Frefs%2Fheads%2Fmain%2FKB_Cafe_Dashboard.xlsx&wdOrigin=BROWSELINK)
-
-[The finished one-page interactive dashboard: 4 slicers, 7 KPI tiles, 8 charts, formula-driven insights and recommended actions.](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FAdeeTheAnalyst%2Fkb-cafe-sales-dashboard%2Frefs%2Fheads%2Fmain%2FKB_Cafe_Dashboard.xlsx&wdOrigin=BROWSELINK)
+   ### 👉 **Live preview:** [Open the interactive dashboard in your browser](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FAdeeTheAnalyst%2Fkb-cafe-sales-dashboard%2Frefs%2Fheads%2Fmain%2FKB_Cafe_Dashboard.xlsx&wdOrigin=BROWSELINK)
 
 ---
 
@@ -62,8 +60,6 @@ KB Cafe's order data lived in three separate tables (orders, customers, products
 5. 🔁 **Retention is the biggest opportunity.** **97% of customers have bought only once**, and **70% have not ordered in over a year**. The loyalty card makes almost no difference to repeat rate (3.0% vs 2.6%).
 
 ## 3. Dataset
-
-**Source:** _[Add where the data came from, e.g. a course, Kaggle link, or note that it is synthetic/sample data.]_
 
 The raw file (`KB_Cafe_Raw_Dataset.xlsx`) has three sheets:
 
@@ -248,12 +244,12 @@ kb-cafe-sales-dashboard/
 
 ## 12. Author & Contact
 
-**[Your Name]**
+Sherifat Adeshina
 Data Analyst
 
-- LinkedIn: [your-profile-link]
-- Portfolio: [your-portfolio-link]
-- Email: [your-email]
+- LinkedIn: [https://www.linkedin.com/in/adeshina-sherifat](https://www.linkedin.com/in/adeshina-sherifat)
+- Portfolio: [https://medium.com/@eyinadeadeshina36/list/from-data-to-decision-making-561ab26ca151](https://medium.com/@eyinadeadeshina36/list/from-data-to-decision-making-561ab26ca151)
+- Email: [eyinadeadeshina36@gmail.com](mailto:eyinadeadeshina36@gmail.com)
 
 If you found this project useful or have feedback, feel free to open an issue or get in touch.
 
