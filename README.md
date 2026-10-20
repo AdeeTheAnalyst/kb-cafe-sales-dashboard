@@ -9,7 +9,7 @@ An interactive Excel dashboard that turns 1,000 raw coffee-order lines into a si
 
 ![KB Cafe dashboard overview](images/01_KB_Cafe_Final_Dashboard.png)
 
-   ### 👉 **Live preview:** [Open the interactive dashboard in your browser](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FAdeeTheAnalyst%2Fkb-cafe-sales-dashboard%2Frefs%2Fheads%2Fmain%2FKB_Cafe_Dashboard.xlsx&wdOrigin=BROWSELINK)
+   ### 👉 **Live preview:** [Open the interactive dashboard in your browser](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FAdeeTheAnalyst%2Fkb-cafe-sales-dashboard%2F3c6d2df3144aebb6b9a76ea5ded4800bfc7c17dc%2FKB_Cafe_Dashboard.xlsx&wdOrigin=BROWSELINK)
 
 ---
 
