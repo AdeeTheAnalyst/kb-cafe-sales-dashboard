@@ -1,287 +1,262 @@
-# KB Cafe: Retail Sales Analysis & Interactive Excel Dashboard
+# ☕ KB Cafe | Retail Sales Dashboard
 
-**From 1,000 raw order lines to a one-page decision tool: finding out why a coffee business is losing orders, where its profit really comes from, and why 97% of its customers never come back.**
+![Excel](https://img.shields.io/badge/Tool-Microsoft%20Excel-217346?logo=microsoftexcel&logoColor=white)
+![PivotTables](https://img.shields.io/badge/Technique-PivotTables%20%26%20Slicers-6F4E37)
+![Analysis](https://img.shields.io/badge/Focus-Sales%2C%20Profit%20%26%20Customer%20Retention-3E2723)
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
 
-![Excel](https://img.shields.io/badge/Microsoft%20Excel-PivotTables%20%7C%20Slicers%20%7C%20Dashboards-217346)
-![Analysis](https://img.shields.io/badge/Analysis-Retail%20%7C%20Customer%20%7C%20Profitability-6D4C41)
-![Status](https://img.shields.io/badge/Status-Complete-5D7B4F)
+An interactive Excel dashboard that turns 1,000 raw coffee-order lines into a single view of **revenue, profit, product mix, geography and customer retention** for KB Cafe, a coffee retailer selling to the United States, Ireland and the United Kingdom.
+
+![KB Cafe dashboard overview](images/01_KB_Cafe_Final_Dashboard.png)
 
 [Click to view the interactive dashboard](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FAdeeTheAnalyst%2Fkb-cafe-sales-dashboard%2Frefs%2Fheads%2Fmain%2FKB_Cafe_Dashboard.xlsx&wdOrigin=BROWSELINK)
 
-[![KB Cafe dashboard](images/01_KB_Cafe_Final_Dashboard.png)](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FAdeeTheAnalyst%2Fkb-cafe-sales-dashboard%2Frefs%2Fheads%2Fmain%2FKB_Cafe_Dashboard.xlsx&wdOrigin=BROWSELINK)
 [The finished one-page interactive dashboard: 4 slicers, 7 KPI tiles, 8 charts, formula-driven insights and recommended actions.](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FAdeeTheAnalyst%2Fkb-cafe-sales-dashboard%2Frefs%2Fheads%2Fmain%2FKB_Cafe_Dashboard.xlsx&wdOrigin=BROWSELINK)
 
 ---
 
 ## Table of Contents
 
-1. [Executive Summary](#1-executive-summary)
-2. [The Business and the Brief](#2-the-business-and-the-brief)
-3. [Business Questions](#3-business-questions)
-4. [The Data](#4-the-data)
-5. [Skills and Tools Demonstrated](#5-skills-and-tools-demonstrated)
-6. [Project Workflow at a Glance](#6-project-workflow-at-a-glance)
-7. [Key Analytical Decisions](#7-key-analytical-decisions)
-8. [Findings](#8-findings)
-9. [Recommendations](#9-recommendations)
-10. [Assumptions and Limitations](#10-assumptions-and-limitations)
-11. [How to Use the Workbook](#11-how-to-use-the-workbook)
-12. [Repository Structure](#12-repository-structure)
-13. [What I Would Do Next](#13-what-i-would-do-next)
-14. [About Me](#14-about-me)
+1. [Business Problem](#1-business-problem)
+2. [Key Findings at a Glance](#2-key-findings-at-a-glance)
+3. [Dataset](#3-dataset)
+4. [Approach & Methodology](#4-approach--methodology)
+5. [Dashboard Guide](#5-dashboard-guide)
+6. [Detailed Insights](#6-detailed-insights)
+7. [Recommendations](#7-recommendations)
+8. [Limitations & Assumptions](#8-limitations--assumptions)
+9. [How to Use This Project](#9-how-to-use-this-project)
+10. [Repository Structure](#10-repository-structure)
+11. [Skills Demonstrated](#11-skills-demonstrated)
+12. [Author & Contact](#12-author--contact)
 
 ---
 
-## 1. Executive Summary
+## 1. Business Problem
 
-KB Cafe sells coffee in three markets (United States, Ireland, United Kingdom). I analysed **1,000 order lines (957 orders, 913 buying customers) from January 2019 to 19 August 2022** and built an interactive Excel dashboard that tells an owner, in under a minute, whether the business is growing, what earns the profit and what to do next.
+KB Cafe's order data lived in three separate tables (orders, customers, products), so management had no quick way to answer basic questions. This project joins them into one model and answers:
 
-### The five things the owner needs to know
+- **How is the business performing?** Revenue, profit, margin, orders and average order value, overall and over time.
+- **Is 2022 on track?** A like-for-like comparison against the same calendar period in earlier years.
+- **What should we sell more of?** Which coffee types and pack sizes drive revenue, and which drive *profit*.
+- **Where do customers come from?** How the country mix has shifted year to year.
+- **Are customers coming back?** Repeat vs one-time buyers, the effect of the loyalty card, and how long since each customer last ordered.
 
-| # | Finding | Evidence |
+## 2. Key Findings at a Glance
+
+| Metric | Value |
+|---|---|
+| Total revenue | **$45,134.26** |
+| Total profit | **$4,520.22** (10% margin) |
+| Orders | **957** from **913** customers |
+| Average order value | **$47.16** |
+| Units / kg sold | **3,551** units / **3,627.4 kg** |
+| Data period | 2 Jan 2019 to 19 Aug 2022 |
+
+**Top takeaways**
+
+1. 🏆 **Liberica is the profit engine.** It makes up 26.7% of sales but **34.7% of profit**. Robusta is the reverse: 20.0% of sales but only **12.0% of profit**.
+2. 📦 **Large bags dominate.** The 2.5 kg pack alone is **53% of revenue**.
+3. 🇺🇸 **The business is increasingly US-centric.** The US share of sales rose from 77.6% (2019) to 81.1% (2022), while the UK fell from 7.8% to under 2%.
+4. 📉 **2022 is the weakest year on a like-for-like basis.** Sales from 1 Jan to 19 Aug 2022 were **$7,063**, about 7% below the same window in 2021 and the lowest of the four years.
+5. 🔁 **Retention is the biggest opportunity.** **97% of customers have bought only once**, and **70% have not ordered in over a year**. The loyalty card makes almost no difference to repeat rate (3.0% vs 2.6%).
+
+## 3. Dataset
+
+**Source:** _[Add where the data came from, e.g. a course, Kaggle link, or note that it is synthetic/sample data.]_
+
+The raw file (`KB_Cafe_Raw_Dataset.xlsx`) has three sheets:
+
+| Sheet | Rows | Grain | Key columns |
+|---|---|---|---|
+| `orders` | 1,000 | One row per product line in an order | Order ID, Order Date, Customer ID, Product ID, Quantity |
+| `customers` | 1,000 | One row per customer | Customer ID, Name, Email, Phone, Address, City, Country, Postcode, Loyalty Card |
+| `products` | 48 | One row per product (4 coffee types × 3 roasts × 4 sizes) | Product ID, Coffee Type, Roast Type, Size (kg), Unit Price, Price per 100g, Profit |
+
+**Quick facts**
+
+- 957 unique orders across 1,000 order lines (about 3% of orders contain more than one product line).
+- 913 of the 1,000 customers placed at least one order.
+- 726 of the 913 ordering customers (80%) have an email address on file.
+- Coffee types: Arabica, Robusta, Liberica, Excelsa. Roasts: Light, Medium, Dark. Pack sizes: 0.2, 0.5, 1 and 2.5 kg.
+- No missing values in the fields used for analysis after joining the tables.
+
+> The `orders` sheet in the raw file contains only the five source columns. The enrichment columns (customer name, country, coffee type, sales, profit and so on) are populated by formulas inside the dashboard workbook, described below.
+
+## 4. Approach & Methodology
+
+All work was done in **Microsoft Excel**, with no macros and no external add-ins.
+
+**Step 1: Build the data model.** Orders were turned into an Excel Table (`Coffee_data`) and enriched with lookups:
+
+- `VLOOKUP` pulls customer name, email, country and loyalty status from `customers` using Customer ID.
+- `INDEX` / `MATCH` pulls coffee type, roast, size, unit price and unit profit from `products` using Product ID.
+- A `Lists` sheet maps short codes (e.g. `Ara`, `L`) to readable labels (Arabica, Light).
+
+**Step 2: Engineer analysis fields.** Calculated columns added to the table:
+
+| Field | Logic | Used for |
 |---|---|---|
-| 1 | **Sales are slipping on a like-for-like basis.** | Same-period (1 Jan to 19 Aug) sales: $7,812 (2019), $7,992 (2020), $7,620 (2021), $7,063 (2022). That is **-7.3%** vs 2021, after -4.7% the year before. |
-| 2 | **The problem is traffic, not basket size.** | 2022 orders are down 9.7% (175 to 158) while average order value rose about 2.7% ($43.54 to $44.71). |
-| 3 | **Sales rank and profit rank are different.** | Liberica earns **35% of profit from 27% of sales** (13.0% margin). Robusta earns **12% of profit from 20% of sales** (6.0% margin). |
-| 4 | **97% of customers bought only once.** | 888 one-time vs 25 repeat customers. Repeat customers spend about **$143 vs $47**. |
-| 5 | **The loyalty card shows no sign of working.** | Card holders repeat at 2.9% vs 2.6% without a card. Card holders also spend less per order ($45.08 vs $49.12). |
+| `Sales` | Quantity × Unit Price | Revenue |
+| `Profit` | Quantity × unit profit | Profit and margin |
+| `Kg Sold` | Quantity × pack size | Volume |
+| `Year`, `Month`, `Quarter`, `Month Start` | Derived from Order Date | Time analysis |
+| `Order Flag` | 1 on the first row of each Order ID, else 0 | Counting orders without double-counting multi-line orders |
+| `Customer Flag` | 1 on a customer's first row, else 0 | Counting unique customers |
+| `Lines In Order`, `Basket Type` | Count of rows per Order ID | Single vs multi-item baskets |
+| `Customers Orders`, `Customer Type` | Orders per customer; Repeat if more than 1 | Repeat vs one-time analysis |
+| `Last Order Date`, `Days Since Last Order` | `MAXIFS` per customer, measured to the latest date in the data | Recency |
+| `Recency Segment` | Active (0-90 days), At risk (91-365), Lapsed (over 365) | Customer health |
+| `Email customer flag` | Unique customer with an email on file | Marketing reach |
+| `In same period` | Order falls on or before the data's end month and day | Like-for-like year comparison |
 
-### The headline recommendations
+**Step 3: Summarise with PivotTables.** 14 PivotTables on the `Pivot_tables` sheet feed every chart and KPI card.
 
-1. **Win back 510 reachable lapsed customers** (642 have not ordered in over a year; 510 have an email address).
-2. **Fix Robusta economics.** Lifting its margin from 6% to the 10% average adds about **$362 profit (+8%)** on the same sales.
-3. **Bundle products.** Multi-item orders average **$93.69 vs $45.60**, yet only 3.2% of orders contain more than one item.
-4. **Redesign the loyalty card** to reward the second purchase.
-5. **Capture email at checkout** (about 20% of buyers cannot be contacted).
+**Step 4: Design the dashboard.** KPI cards, 8 charts and 4 slicers (Year, Country, Loyalty Card, Coffee Type) on one screen, in a coffee-inspired palette. All slicers filter every visual, so any KPI or chart can be sliced by market, product or customer type.
 
-> Overall performance: **$45,134 revenue, $4,520 profit (10.0% margin), 957 orders, average order value $47.16, 3,627 kg sold.**
+## 5. Dashboard Guide
 
----
+**Filters (top):** Year · Country · Loyalty Card · Coffee Type
 
-## 2. The Business and the Brief
+**KPI cards:** Total Revenue · Total Profit · Profit Margin % · Orders · Average Order Value · Units Sold · Kg Sold
 
-KB Cafe is a small coffee retailer selling four coffee types (Arabica, Excelsa, Liberica, Robusta) in three roast levels (Light, Medium, Dark) and four pack sizes (0.2 kg, 0.5 kg, 1 kg, 2.5 kg) to customers in the United States, Ireland and the United Kingdom. Some customers hold a loyalty card.
-
-I took the role of a **sales and business analyst** and set myself the brief an owner or investor would give:
-
-> *"Build me something I can open in under a minute that tells me whether we are growing, where we make our money, who our customers are and what I should do about it."*
-
-A dashboard that only describes sales would not meet that brief. The goal was to move from **describing what happened** to **supporting decisions**.
-
-
----
-
-## 3. Business Questions
-
-| Question an owner or investor asks | Where the dashboard answers it |
+| Visual | Question it answers |
 |---|---|
-| How big is the business and is it profitable? | KPI tiles: revenue, profit, margin, orders, AOV, kg sold |
-| Are we growing against last year, fairly measured? | Same-period sales chart and scorecard |
-| When do we sell most? | Monthly sales trend |
-| Which products really earn the profit? | Share of sales vs share of profit; coffee economics table |
-| Are we too dependent on one market? | Country mix by year |
-| Which pack sizes carry the revenue? | Sales by pack size |
-| Do customers come back? | Repeat vs one-time customers; repeat-rate tile |
-| Is the loyalty card working? | Repeat rate: card holders vs no card |
-| How many customers have we lost, and can we reach them? | Customer recency chart (with email coverage) |
-| What should we do next? | Insights and recommended actions boxes |
+| Monthly sales trend (all years) | What does demand look like over time, and is there seasonality? |
+| Same-period sales (1 Jan to 19 Aug) | Is the current year ahead or behind previous years on a like-for-like basis? |
+| Sales vs profit by coffee type | Which products earn more profit than their share of sales suggests? |
+| Country mix by year (% of sales) | Is the market mix changing? |
+| Sales by pack size | Which bag sizes drive revenue? |
+| Customer recency (customers vs with email) | How many customers are active, at risk or lapsed, and how many can we email? |
+| Repeat vs one-time customers | What share of customers come back? |
+| Repeat rate: loyalty card vs no card | Does the loyalty card improve retention? |
 
----
+![Dashboard charts](images/02_Charts.png)
+![Dashboard charts](images/03_Charts.png)
 
-## 4. The Data
+## 6. Detailed Insights
 
-Three related tables: `orders` (1,000 order lines), `customers` (1,000 registered customers) and `products` (48 products). Orders link to customers and products through `Customer ID` and `Product ID`.
+### Sales trend and 2022 performance
 
-| Item | Detail |
-|---|---|
-| **Period** | 2 January 2019 to 19 August 2022 |
-| **Markets** | United States, Ireland, United Kingdom |
-| **Products** | 4 coffee types, 3 roast levels, 4 pack sizes (48 products) |
-| **Grain** | One row per product on an order (an *order line*) |
+| Year | Revenue | Profit | Orders |
+|---|---|---|---|
+| 2019 | $12,187 | $1,230 | 245 |
+| 2020 | $12,118 | $1,193 | 257 |
+| 2021 | $13,766 | $1,389 | 297 |
+| 2022 (to 19 Aug) | $7,063 | $708 | 158 |
 
-**Data realities that shaped the analysis**
+- Revenue was flat from 2019 to 2020, then grew about **13.6% in 2021**.
+- Because 2022 only runs to 19 August, the dashboard compares the same window (1 Jan to 19 Aug) across years: $7,992 (2020), $7,812 (2019), $7,620 (2021) and **$7,063 (2022)**. 2022 is roughly 7% behind 2021 on this basis.
+- Monthly sales are volatile, ranging from roughly $300 to $1,800. The final point on the trend line is a **partial month** (August 2022, data ends on the 19th), so the sharp drop at the end should not be read as a collapse.
 
-- One row is not one order: 1,000 rows but **957 orders** (74 rows belong to 31 multi-item orders).
-- One row is not one customer: **913 buying customers**. 87 registered customers never bought (70 of them have an email address).
-- Not every customer has an email: 726 of 913 buyers (79.5%) can be reached.
-- Profit is only available as a **per-unit figure** in the products table, so total profit is quantity times unit profit.
+### Product performance: sales vs profit
 
----
+| Coffee type | % of sales | % of profit | Margin |
+|---|---|---|---|
+| Liberica | 26.7% | **34.7%** | 13% |
+| Excelsa | 27.3% | 29.9% | 11% |
+| Arabica | 26.1% | 23.4% | 9% |
+| Robusta | 20.0% | **12.0%** | 6% |
 
-## 5. Skills and Tools Demonstrated
+Sales are spread fairly evenly across the four types, but profit is not. Liberica and Excelsa together generate about **65% of profit** from 54% of sales.
 
-| Skill | How it shows up in this project |
-|---|---|
-| **Data preparation** | Joined three tables with `INDEX`/`MATCH`, handled blank emails, converted product codes to readable names via a lookup list |
-| **Feature engineering** | Built 13 helper columns to turn order lines into orders, customers, recency, baskets and like-for-like periods |
-| **Structured table formulas** | Excel Tables with structured references, expanding-range `COUNTIF`, `SUMIFS`, `MAXIFS`, named formulas |
-| **Pivot analysis** | 12 PivotTables with calculated fields, Show Values As (percent of total, difference from previous) and report filters |
-| **Metric design** | Defined revenue, profit, margin, AOV, profit per kg, repeat rate, recency segments and same-period growth |
-| **Interactive dashboard design** | Slicers with a deliberate connection matrix, GETPIVOTDATA-driven KPI tiles, PivotCharts and formula-driven charts |
-| **Visual design** | Consistent palette, 21-column grid layout, one-page landscape print setup |
-| **Insight writing** | Formula-driven insight sentences that update with filters; "what, so what, now what" structure |
-| **Validation** | Checked every helper column and every slicer state against known totals |
-| **Business communication** | Translated findings into sized, measurable recommendations and stakeholder-ready language |
+### Pack size
 
-**Tools:** Microsoft Excel (PivotTables, PivotCharts, slicers, Tables, Data Validation, Name Manager, conditional formatting).
-
----
-
-## 6. Project Workflow at a Glance
-
-| Step | What I did | Detail |
+| Size | Revenue | Share |
 |---|---|---|
-| 1. Understand | Wrote the business questions before touching a formula | [Section 3](#3-business-questions) |
-| 2. Prepare | Filled the orders table with lookups to customers and products; made it an Excel Table |
-| 3. Engineer | Added 13 helper columns and one named formula (`DataEnd`) |
-| 4. Analyse | Built 12 PivotTables, one per question or chart | 
-| 5. Visualise | Built 8 charts (7 PivotCharts, 1 formula-driven) |
-| 6. Interact | Added 4 slicers, each connected deliberately |
-| 7. Design | Laid out a one-page, 21-column dashboard |
-| 8. Narrate | Wrote formula-driven insights and actions |
-| 9. Validate | Checked helper columns, KPIs and slicer states against known totals |
+| 2.5 kg | $23,786 | 53% |
+| 1 kg | $11,011 | 24% |
+| 0.5 kg | $7,030 | 16% |
+| 0.2 kg | $3,308 | 7% |
 
----
+Customers buying large bags account for over half of revenue, so the business leans towards bulk or trade-style purchasing.
 
-## 7. Findings
+### Geography
 
-### 7.1 Growth: a decline driven by fewer orders
+| Year | United States | Ireland | United Kingdom |
+|---|---|---|---|
+| 2019 | 77.6% | 14.6% | 7.8% |
+| 2020 | 77.3% | 13.8% | 8.9% |
+| 2021 | 80.6% | 14.8% | 4.7% |
+| 2022 | 81.1% | 17.1% | about 1.8% |
 
-| Year | Same-period sales (1 Jan to 19 Aug) | Orders | Avg order value | Growth |
-|---|---|---|---|---|
-| 2019 | $7,812 | 155 | $50.40 | |
-| 2020 | $7,992 | 168 | $47.57 | +2.3% |
-| 2021 | $7,620 | 175 | $43.54 | -4.7% |
-| 2022 | $7,063 | 158 | $44.71 | **-7.3%** |
+The UK has shrunk to a marginal market, while Ireland has held up and grown in share.
 
-Revenue is orders times average order value. In 2022 orders fell 9.7% while AOV rose about 2.7%, so the decline is a **traffic problem, not a basket-size problem**. AOV is still 11% below 2019.
+### Customer retention
 
-*Seasonality caveat:* September to December is the peak (34%, 34% and 42% of sales in 2019 to 2021), and 2022's peak is still to come. This is an **early warning, not a verdict**.
+- **913 customers**, of whom **888 (97%) are one-time** buyers and **25 (3%) are repeat** buyers.
+- **Loyalty card:** repeat rate is **3.0% for cardholders vs 2.6% without** (13 of 443 vs 12 of 470). The gap is about one customer, so the card is not visibly driving loyalty.
+- **Recency** (measured to 19 Aug 2022): **57 active (6%)**, **214 at risk (23%)**, **642 lapsed (70%)**.
+- **510 of the 642 lapsed customers (79%) have an email on file**, so most of the win-back audience is directly reachable.
 
-### 7.2 Profitability: sales rank is not profit rank
+## 7. Recommendations
 
-| Coffee | Share of sales | Share of profit | Margin | Profit per kg |
-|---|---|---|---|---|
-| Liberica | 27% | **35%** | 13.0% | $1.89 |
-| Excelsa | 27% | 30% | 11.0% | $1.51 |
-| Arabica | 26% | 23% | 9.0% | $1.02 |
-| Robusta | 20% | **12%** | **6.0%** | $0.63 |
+These are the actions the data points to, in rough priority order:
 
-Each dollar of Robusta earns about half what a dollar of Liberica earns. Roast level makes almost no difference (margins of about 10% across Light, Medium and Dark), which is why I removed the Coffee x Roast chart from the dashboard.
+1. **Launch a win-back campaign** to the 510 lapsed customers with an email on file, and a lighter nudge to the 175 at-risk customers with email. This is the largest, cheapest source of recoverable revenue.
+2. **Promote Liberica and Excelsa**, which deliver the highest margins, through featured placement, bundles and bulk-size offers.
+3. **Review Robusta pricing or cost.** It is a fifth of sales but only 12% of profit at a 6% margin.
+4. **Redesign the loyalty programme.** A card alone does not change repeat behaviour. Test points, subscription or reorder reminders, especially for 2.5 kg buyers.
+5. **Investigate the 2022 shortfall and the UK decline** (pricing, shipping, competition, marketing spend) before committing budget to either.
+6. **Capture more emails** at checkout. 20% of customers cannot currently be contacted.
 
-### 7.3 Customers: the business has a retention problem
+## 8. Limitations & Assumptions
 
-- **97.3% of customers (888 of 913) bought once.**
-- The 25 repeat customers are 2.7% of customers but **7.9% of revenue**, and spend about **$143 versus $47** per customer.
-- **Loyalty card:** card holders repeat at 2.9% (13 of 443) versus 2.6% (12 of 470). There is **no evidence the card changes behaviour**. Card holders also spend less per order ($45.08 versus $49.12).
+- **Profit is rule-based, not measured.** In the `products` table, unit profit equals a fixed percentage of price by coffee type (Robusta 6%, Arabica 9%, Excelsa 11%, Liberica 13%). Margin differences between coffee types therefore reflect that assumption rather than independent cost data, and should be validated against real costs before pricing decisions.
+- **Partial final year.** Data ends 19 Aug 2022. Full-year 2022 figures are not available, which is why a same-period comparison is used.
+- **Recency is relative to the last date in the data** (19 Aug 2022), not today's date.
+- **Small sample.** 1,000 order lines and 25 repeat customers. The repeat-rate comparison between cardholders and non-cardholders is directional only and not statistically conclusive.
+- **No customer acquisition, cost or marketing data**, so channel ROI and true customer lifetime value cannot be assessed.
+- 87 customers in the `customers` table have no orders and are excluded from customer-level metrics.
 
-*Caution:* counts of 13 and 12 are small, so I phrase it as "no evidence it works", not "it does not work".
+## 9. How to Use This Project
 
-### 7.4 Customer base health
+**Requirements:** Microsoft Excel 2019 or Microsoft 365 for Windows or Mac. The workbook uses `MAXIFS` and slicers, so older Excel versions and Google Sheets may not display it correctly.
 
-| Segment | Customers | With email |
-|---|---|---|
-| Active (0 to 90 days) | 57 | 41 |
-| At risk (91 to 365 days) | 214 | 175 |
-| **Lapsed (over 365 days)** | **642** | **510** |
-| Total | 913 | 726 |
+1. Download `dashboard/KB_Cafe_Dashboard.xlsx`.
+2. Open it and click **Enable Editing**.
+3. Go to the **Dashboard** sheet and use the slicers (Year, Country, Loyalty Card, Coffee Type) to filter every KPI and chart. Click the funnel icon on a slicer to clear it.
+4. To explore the logic, open `Orders` (calculated columns), `Pivot_tables` (all aggregations), `Products`, `Customers` and `Lists`.
+5. If you add or edit data, go to **Data → Refresh All** to update the PivotTables.
 
-Seventy percent of customers have not returned in over a year, and 79.5% of buyers can be contacted by email at almost no cost. A further 87 registered customers never bought at all (70 have an email address).
+To rebuild from scratch, start with `data/KB_Cafe_Raw_Dataset.xlsx` and follow the steps in [Approach & Methodology](#4-approach--methodology).
 
-### 7.5 Baskets and pack sizes
+## 10. Repository Structure
 
-- Only **31 of 957 orders (3.2%)** contain more than one product, but they average **$93.69 versus $45.60**.
-- The 2.5 kg bag is **53%** of sales. The 0.2 kg bag is about 25% of units but only about 7% of revenue, so it may cost more to handle than it earns (cost data would confirm).
-
-### 7.6 Markets
-
-- The **United States is 79%** of sales overall and **81% in 2022**.
-- The **United Kingdom's share fell from 8% (2019) to 2% (2022)**; same-period UK sales dropped from $289 to $130 between 2021 and 2022.
-- Ireland grew from 15% to 17% of sales.
-
----
-
-## 9. Recommendations
-
-| # | Action | Why | Estimated impact | Success measure |
-|---|---|---|---|---|
-| 1 | **Win-back email campaign** to lapsed customers | 510 reachable lapsed customers; repeat buyers are worth about 3 times more | *Illustration:* a 5% response (about 25 people) at $47 each is about $1,200 revenue, roughly $120 profit at a 10% margin | Response rate, orders from the list |
-| 2 | **First-purchase offer** to 87 registered non-buyers | They signed up but never converted; 70 have email | Small, near-zero cost test | Sign-up to first-purchase conversion |
-| 3 | **Review Robusta cost or price** | 6% margin versus 10% average | About **$362 extra profit (+8%)** on unchanged volume | Margin by coffee after the change |
-| 4 | **Bundle products** | Multi-item orders average about double | Lifts AOV if the share of multi-item orders rises | Multi-item share, AOV |
-| 5 | **Redesign the loyalty card** to reward a second purchase | No repeat lift from the current card | Moves repeat rate toward a target (for example 5%) | Repeat rate, card holders vs others |
-| 6 | **Capture email at checkout** | About 20% of buyers have no email (187 of 913) | Expands the reachable audience for actions 1 and 5 | Email coverage % |
-
-**Be realistic about scale.** The business sold about $45k over roughly 3.6 years, so these are modest, real improvements, and the first two cost almost nothing. The impact figures are **illustrations with stated assumptions**, not forecasts. For example, the Robusta estimate assumes volume does not fall if price rises, which is why the action says "review cost or price".
-
----
-
-## 10. Assumptions and Limitations
-
-- **Currency** is shown as `$` because the dataset does not state one.
-- **Profit** uses the per-unit profit figure supplied in the products table. Marketing, handling and overhead costs are not in the data.
-- **Recency is measured as of 19 August 2022**, the last date in the data, not today's date.
-- **Recency thresholds (90 and 365 days)** are business judgements and can be adjusted.
-- **The 2022 comparison is year-to-date.** The peak season (September to December) is not yet in the data, so the decline is an early warning, not a final result.
-- **Small counts:** only 25 customers are repeat buyers, so retention percentages are directional.
-- **Findings describe what happened;** they suggest causes but do not prove them. Recommendations are hypotheses to test, and impact figures are illustrations.
-- **Customer charts are all-time snapshots** and do not respond to the Year slicer by design.
-
----
-
-## 11. How to Use the Workbook
-
-1. Open `KB_Cafe_Dashboard.xlsx` in **Microsoft Excel 2019 or Microsoft 365**. Click **Enable Editing** if it opens in Protected View.
-2. Go to the **Dashboard** sheet.
-3. Click the **slicers** (Year, Country, Loyalty Card, Coffee Type) to filter. Use **Ctrl+Click** to select several items, or the funnel icon to clear.
-4. Read the dashboard top to bottom: KPIs, trend, products, customers, insights, actions.
-5. After changing the data, use **Data > Refresh All**.
-
-| Sheet | Contents |
-|---|---|
-| `Dashboard` | The one-page interactive dashboard |
-| `Analysis` | PT-01 to PT-12 |
-| `Insights` | Insight and action formulas |
-| `Coffee_data` (orders) | Cleaned orders table with 13 helper columns |
-| `customers`, `products` | Source reference tables |
-
----
-
-## 12. Repository Structure
-
-```
+```text
 kb-cafe-sales-dashboard/
-|--images/
-|   -- 01_KB_Cafe_Final_Dashboard.png                
-|   -- 02_Charts.png
-|   -- 03_Charts.png
-|   -- pivots/
-|     |
-|-- KB_Cafe_Dashboard.xlsx
-|-- KB_Cafe_Raw_Dataset_xlsx     
-|-- README.md
-
+├── README.md
+├── dashboard/
+│   └── KB_Cafe_Dashboard.xlsx      # Final interactive dashboard (6 sheets)
+├── data/
+│   └── KB_Cafe_Raw_Dataset.xlsx    # Raw orders, customers and products
+└── images/
+    ├── dashboard-overview.png      # Full dashboard screenshot
+    └── dashboard-charts.png        # Chart section screenshot
 ```
 
----
+**Workbook sheets:** `Dashboard` · `Pivot_tables` · `Orders` · `Customers` · `Products` · `Lists`
 
-## 13. What I Would Do Next
+## 11. Skills Demonstrated
 
-- **Add targets** (for example repeat rate 10%, margin 12%) and show them as traffic-light indicators beside each KPI tile. A KPI without a target is only a number.
-- **Cohort analysis:** group customers by first-purchase month and track how many return, to see whether retention is improving or worsening.
-- **Forecast the peak season** to estimate where 2022 may finish.
-- **Customer lifetime value** and acquisition-cost analysis once marketing spend data is available.
-- **A/B test the win-back offer** on a random half of lapsed customers to measure true uplift.
-- **Rebuild the same analysis in Power BI and SQL** to compare approaches (DAX measures and SQL window functions for the repeat and recency logic).
+- **Data modelling:** joining fact and dimension tables with `VLOOKUP` and `INDEX`/`MATCH`
+- **Feature engineering:** calculated columns for flags, segments and like-for-like periods using `COUNTIF`, `SUMIFS`, `MAXIFS`, `DATEDIF`
+- **Aggregation and analysis:** PivotTables, calculated fields, year-on-year and same-period comparison
+- **Customer analytics:** repeat vs one-time analysis, recency segmentation, loyalty programme assessment
+- **Dashboard design:** KPI cards, interactive slicers, consistent colour palette and clear chart titles
+- **Business communication:** turning numbers into findings and recommendations
 
----
+## 12. Author & Contact
 
-## 14. About Me
+**[Your Name]**
+Data Analyst
 
-### SHERIFAT ADESHINA: Data Analyst
+- LinkedIn: [your-profile-link]
+- Portfolio: [your-portfolio-link]
+- Email: [your-email]
 
-I turn raw business data into decisions: cleaning and modelling data, building dashboards people actually use, and explaining the findings in plain language.
+If you found this project useful or have feedback, feel free to open an issue or get in touch.
 
-- LinkedIn: [https://www.linkedin.com/in/adeshina-sherifat](https://www.linkedin.com/in/adeshina-sherifat)
-- Portfolio: [https://medium.com/@eyinadeadeshina36/list/from-data-to-decision-making-561ab26ca151](https://medium.com/@eyinadeadeshina36/list/from-data-to-decision-making-561ab26ca151)
-- Email: [eyinadeadeshina36@gmail.com](mailto:eyinadeadeshina36@gmail.com)
+## License
+
+Released under the [MIT License](LICENSE). The dataset is included for demonstration and learning purposes.
