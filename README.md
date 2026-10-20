@@ -6,10 +6,10 @@
 ![Analysis](https://img.shields.io/badge/Analysis-Retail%20%7C%20Customer%20%7C%20Profitability-6D4C41)
 ![Status](https://img.shields.io/badge/Status-Complete-5D7B4F)
 
-![KB Cafe dashboard](images/01_dashboard_final.png)
+[![KB Cafe dashboard](images/01_KB_Cafe_Final_Dashboard.png)](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FAdeeTheAnalyst%2Fkb-cafe-sales-dashboard%2Frefs%2Fheads%2Fmain%2FKB_Cafe_Dashboard.xlsx&wdOrigin=BROWSELINK)
 *The finished one-page interactive dashboard: 4 slicers, 7 KPI tiles, 8 charts, formula-driven insights and recommended actions.*
 
-> **Note:** GitHub cannot preview or run interactive Excel files. Download `KB_Cafe_Dashboard_v2.xlsx` to use the slicers, or read the documentation in [`docs/`](docs/README.md) for every formula and step.
+
 
 ---
 
