@@ -7,7 +7,7 @@
 
 An interactive Excel dashboard that turns 1,000 raw coffee-order lines into a single view of **revenue, profit, product mix, geography and customer retention** for KB Cafe, a coffee retailer selling to the United States, Ireland and the United Kingdom.
 
-![KB Cafe dashboard overview](images/01_KB_Cafe_Final_Dashboard.png)
+![KB Cafe dashboard overview](images/dashboard-overview.png)
 
    ### 👉 **Live preview:** [Open the interactive dashboard in your browser](https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fraw.githubusercontent.com%2FAdeeTheAnalyst%2Fkb-cafe-sales-dashboard%2F3c6d2df3144aebb6b9a76ea5ded4800bfc7c17dc%2FKB_Cafe_Dashboard.xlsx&wdOrigin=BROWSELINK)
 
@@ -127,8 +127,8 @@ All work was done in **Microsoft Excel**, with no macros and no external add-ins
 | Repeat vs one-time customers | What share of customers come back? |
 | Repeat rate: loyalty card vs no card | Does the loyalty card improve retention? |
 
-![Dashboard charts](images/02_Charts.png)
-![Dashboard charts](images/03_Charts.png)
+![Dashboard charts](images/dashboard-charts/02_Charts.png)
+![Dashboard charts](images/dashboard-charts/03_Charts.png)
 
 ## 6. Detailed Insights
 
