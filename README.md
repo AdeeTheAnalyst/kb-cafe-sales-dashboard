@@ -53,11 +53,11 @@ KB Cafe's order data lived in three separate tables (orders, customers, products
 
 **Top takeaways**
 
-1. 🏆 **Liberica is the profit engine.** It makes up 26.7% of sales but **34.7% of profit**. Robusta is the reverse: 20.0% of sales but only **12.0% of profit**.
-2. 📦 **Large bags dominate.** The 2.5 kg pack alone is **53% of revenue**.
-3. 🇺🇸 **The business is increasingly US-centric.** The US share of sales rose from 77.6% (2019) to 81.1% (2022), while the UK fell from 7.8% to under 2%.
-4. 📉 **2022 is the weakest year on a like-for-like basis.** Sales from 1 Jan to 19 Aug 2022 were **$7,063**, about 7% below the same window in 2021 and the lowest of the four years.
-5. 🔁 **Retention is the biggest opportunity.** **97% of customers have bought only once**, and **70% have not ordered in over a year**. The loyalty card makes almost no difference to repeat rate (3.0% vs 2.6%).
+1. **Liberica is the profit engine.** It makes up 26.7% of sales but **34.7% of profit**. Robusta is the reverse: 20.0% of sales but only **12.0% of profit**.
+2. The 2.5 kg pack alone is **53% of revenue**.
+3. **The business is increasingly US-centric.** The US share of sales rose from 77.6% (2019) to 81.1% (2022), while the UK fell from 7.8% to under 2%.
+4. **2022 is the weakest year on a like-for-like basis.** Sales from 1 Jan to 19 Aug 2022 were **$7,063**, about 7% below the same window in 2021 and the lowest of the four years.
+5. **Retention is the biggest opportunity.** **97% of customers have bought only once**, and **70% have not ordered in over a year**. The loyalty card makes almost no difference to repeat rate (3.0% vs 2.6%).
 
 ## 3. Dataset
 
